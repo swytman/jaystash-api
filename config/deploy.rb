@@ -9,9 +9,8 @@ set :repo_url, 'https://github.com/swytman/jaystash-api.git'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/jaystash-api'
-
-set :deploy_to, "/srv/#{fetch(:application)}"
-set :unicorn_conf, "#{fetch(:deploy_to)}/current/config/unicorn.rb"
+set :current_path,  "#{fetch(:deploy_to)}/current"
+set :unicorn_conf, "#{fetch(:deploy_to)}/current/config/unicorn/#{fetch(:stage)}.rb"
 set :unicorn_pid, "#{fetch(:deploy_to)}/shared/pids/unicorn.pid"
 
 
@@ -40,37 +39,27 @@ set :linked_files, %w{config/database.yml}
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
-
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-      execute :rake, 'cache:clear'
-    end
-  end
-
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      invoke 'unicorn:restart'
-      # end
-    end
-  end
-end
-
 namespace :unicorn do
+
   task :restart do
-    run "if [ -f #{fetch(:unicorn_pid)} ]; then kill -USR2 `cat #{fetch(:unicorn_pid)}`; else cd #{fetch(:deploy_to)}/current && bundle exec unicorn -c #{fetch(:unicorn_conf)} -E #{fetch(:stage)} -D; fi"
+    on roles :all do
+      execute "if [ -f #{fetch(:unicorn_pid)} ]; then kill -USR2 `cat #{fetch(:unicorn_pid)}`; else cd #{fetch(:current_path)} && bundle exec unicorn -c #{fetch(:unicorn_conf)} -E #{fetch(:stage)} -D; fi"
+    end
   end
+
   task :start do
-    run "cd #{fetch(:deploy_to)}/current && bundle exec unicorn -c #{fetch(:unicorn_conf)} -E #{fetch(:stage)} -D"
+    on roles :all do
+      run "cd #{fetch(:current_path)} && bundle exec unicorn -c #{fetch(:unicorn_conf)} -E #{fetch(:stage)} -D"
+    end
   end
+
   task :stop do
-    run "if [ -f #{fetch(:unicorn_pid)} ]; then kill -QUIT `cat #{fetch(:unicorn_pid)}`; fi"
+    on roles :all do
+      run "if [ -f #{fetch(:unicorn_pid)} ]; then kill -QUIT `cat #{fetch(:unicorn_pid)}`; fi"
+    end
   end
+
 end
+
+after 'deploy:publishing', 'unicorn:restart'
+
