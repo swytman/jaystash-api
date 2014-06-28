@@ -1,0 +1,14 @@
+h2 {
+   color: red;
+}
+.from-group {
+    margin-bottom: 10px;
+}
+
+input, textarea{
+    width: 100%;
+}
+
+.top20 {
+    margin-top: 20px;
+}

@@ -2,17 +2,19 @@ source 'https://rubygems.org'
 gem 'sinatra'
 
 gem 'json'
-gem 'data_mapper'
+gem 'haml'
 
-# When developing an app locally you can use SQLite which is a relational
-# database stored in a file. It's easy to set up and just fine for most
-# development situations.
+gem 'sinatra'
+gem 'sinatra-assetpack'
+gem 'rake'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'therubyracer'
+gem 'coffee-script'
+
 group :development do
-  gem 'dm-sqlite-adapter'
+  gem 'sqlite3'
+  gem 'shotgun'
+  gem 'tux'
 end
 
-# Heroku uses Postgres however, so we tell the Gemfile to use Postgres
-# in production instead of SQLite.
-group :production do
-  gem 'dm-postgres-adapter'
-end
