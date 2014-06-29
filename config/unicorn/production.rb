@@ -9,6 +9,7 @@ old_pid = pid_file + '.oldbin'
 timeout 30
 worker_processes 2 # increase or decrease
 working_directory app_root
+listen 8080, :tcp_nopush => true
 listen socket_file, :backlog => 1024
 
 pid pid_file
