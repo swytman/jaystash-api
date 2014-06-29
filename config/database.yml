@@ -1,11 +1,26 @@
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: jaystash_prod
+  pool: 5
+  host: 198.199.109.47
+  username: postgres
+  password: slar177
+  timeout: 5000
 
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: jaystash_dev
+  pool: 5
+  host: 198.199.109.47
+  username: postgres
+  password: slar177
+  timeout: 5000
 
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
+  adapter: postgresql
+  database: jaystash_test
+  pool: 5
+  host: 198.199.109.47
+  username: postgres
+  password: slar177
+  timeout: 5000

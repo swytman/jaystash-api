@@ -13,6 +13,7 @@ gem 'sinatra-activerecord'
 gem 'therubyracer'
 gem 'coffee-script'
 gem 'unicorn'
+gem 'pg'
 
 group :development do
   gem 'capistrano'
