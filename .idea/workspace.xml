@@ -81,7 +81,7 @@
       <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="53" selection-start="270" selection-end="270" vertical-scroll-proportion="0.1399689" vertical-offset="0" max-vertical-offset="643">
+            <state line="7" column="5" selection-start="277" selection-end="277" vertical-scroll-proportion="0.19595645" vertical-offset="0" max-vertical-offset="643">
               <folding />
             </state>
           </provider>
@@ -756,7 +756,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="53" selection-start="270" selection-end="270" vertical-scroll-proportion="0.1399689" vertical-offset="0" max-vertical-offset="643">
+        <state line="7" column="5" selection-start="277" selection-end="277" vertical-scroll-proportion="0.19595645" vertical-offset="0" max-vertical-offset="643">
           <folding />
         </state>
       </provider>

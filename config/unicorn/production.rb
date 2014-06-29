@@ -6,8 +6,8 @@ log_file = "#{deploy_to}/shared/log/unicorn.log"
 err_log = "#{deploy_to}/shared/log/unicorn_error.log"
 
 timeout 30
-worker_processes 2 # increase or decrease
-working_directory app_root
+worker_processes 2
+#working_directory app_root
 listen socket_file, :backlog => 1024
 
 pid pid_file
