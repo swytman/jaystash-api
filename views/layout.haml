@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %link{href: "ace/assets/css/bootstrap.min.css", rel: "stylesheet", type: "text/css"}
+    %link{href: "ace/assets/css/font-awesome.min.css", rel: "stylesheet", type: "text/css"}
+    %link{href: "ace/assets/css/ace.min.css", rel: "stylesheet", type: "text/css"}
+    %link{href: "ace/assets/css/ace-skins.min.css ", rel: "stylesheet", type: "text/css"}
+    %link{href: "ace/assets/css/ace-ie.min.css", rel: "stylesheet", type: "text/css"}
+    %link{href: "ace/assets/css/ace-fonts.css", rel: "stylesheet", type: "text/css"}
+    %link{href: "/css/application.css", rel: "stylesheet", type: "text/css"}
+    %script{src: "//code.jquery.com/jquery-2.1.1.min.js"}
+    %script{src: "ace/assets/js/jquery.autosize.min.js"}
+    %script{src: "ace/assets/js/bootstrap.min.js"}
+    %script{src: "ace/assets/js/ace.min.js"}
+    %script{src: "ace/assets/js/ace-elements.min.js"}
+    %script{src: "ace/assets/js/ace-extra.min.js"}
+    %script{src: "js/app.js"}
+
+  %body
+    .container
+      .navbar.navbar-default.h-navbar
+        .navbar-container
+          .navbar-header.pull-left
+            %a.navbar-brand{href: '/'} Jaystash
+          .navbar-menu.pull-left.collapse.navbar-collapse
+            %ul.nav.navbar-nav{role: "navigation"}
+              %li
+                %a{href: '/create'} Спрятать
+          .navbar-menu.pull-right.collapse.navbar-collapse
+            %ul.nav.navbar-nav{role: "navigation"}
+              %li
+                %a{href: '/api'} Api
+
+
+      .page-container
+        .page-content
+          = yield
+

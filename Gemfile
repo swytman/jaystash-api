@@ -13,6 +13,8 @@ gem 'therubyracer'
 gem 'coffee-script'
 gem 'unicorn'
 gem 'pg'
+#gem 'sass'
+gem 'rack-coffee'
 
 group :development do
   gem 'capistrano'

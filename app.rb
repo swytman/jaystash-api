@@ -13,6 +13,15 @@ class App < Sinatra::Base
     haml :index
   end
 
+  get '/create' do
+    haml :create
+  end
+
+
+  get '/api' do
+    haml :api
+  end
+
   # create or update stash
   # POST /stash
   # content - text, tags - string
@@ -47,7 +56,7 @@ class App < Sinatra::Base
     if stash
       {result: stash.contentable.content}.to_json
     else
-      {result: :not_found}.to_json
+      {result: 'Ничего не найдено'}.to_json
     end
   end
 

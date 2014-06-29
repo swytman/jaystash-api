@@ -5,9 +5,10 @@ socket_file= "#{deploy_to}/shared/unicorn.sock"
 log_file = "#{deploy_to}/shared/log/unicorn.log"
 err_log = "#{deploy_to}/shared/log/unicorn_error.log"
 
-timeout 30
+
 worker_processes 2
-#working_directory app_root
+working_directory app_root
+timeout 30
 listen socket_file, :backlog => 1024
 
 pid pid_file

@@ -1,0 +1,11 @@
+%h3.text-center Спрятать
+
+.row.form-group.top20
+  .col-md-6.col-md-offset-3
+    .input-group
+      %input{:type => "text", :name => "create_tags", :class => "form-control text"}
+      %span.input-group-btn
+        %button.btn.btn-sm.btn-success#create-stash Создать
+.row.form-group
+  .col-md-6.col-md-offset-3
+    %textarea{:name => "create_text", :class => "autosize-transition textarea"}

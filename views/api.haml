@@ -1,0 +1,41 @@
+%h3 CREATE OR UPDATE
+.badge
+  ="POST /stash"
+
+.row.form-group.top20
+  .col-sm-2
+    %label.control-label.no-padding-right{:for => "create_tags"} tags:
+  .col-md-6
+    %input{:type => "text", :name => "create_tags", :class => "text"}
+.row.form-group
+  .col-md-2
+    %label.control-label.no-padding-right{:for => "create_text"} content:
+  .col-md-6
+    %textarea{:name => "create_text", :class => "textarea"}
+.row.form-group
+  .col-md-offset-2.col-md-2
+    %button.btn.btn-success#create-stash Create
+%hr
+%h3 GET
+.badge
+  ="GET /stash"
+.row.form-group.top20
+  .col-sm-2
+    %label.control-label.no-padding-right{:for => "get_tags"} tags:
+  .col-md-6
+    %input{:type => "text", :name => "get_tags", :class => "text"}
+.row.form-group
+  .col-md-offset-2.col-md-2
+    %button.btn.btn-success#get-stash Get
+%hr
+%h3 DELETE
+.badge
+  ="DELETE /stash"
+.row.form-group.top20
+  .col-sm-2
+    %label.control-label.no-padding-right{:for => "get_tags"} tags:
+  .col-md-6
+    %input{:type => "text", :name => "delete_tags", :class => "text"}
+.row.form-group
+  .col-md-offset-2.col-md-2
+    %button.btn.btn-danger#delete-stash Delete

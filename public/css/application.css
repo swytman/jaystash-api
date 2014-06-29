@@ -12,3 +12,16 @@ input, textarea{
 .top20 {
     margin-top: 20px;
 }
+
+.response {
+    background-color: #c4dae6;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.autosize-transition {
+    overflow: hidden;
+    word-wrap: break-word;
+    resize: horizontal;
+    height: 100px;
+}

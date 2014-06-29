@@ -1,91 +1,11 @@
-!!!
-%html
-  %head
-    %link{href: "ace/assets/css/bootstrap.min.css", rel: "stylesheet", type: "text/css"}
-    %link{href: "ace/assets/css/font-awesome.min.css", rel: "stylesheet", type: "text/css"}
-    %link{href: "ace/assets/css/ace.min.css", rel: "stylesheet", type: "text/css"}
-    %link{href: "ace/assets/css/ace-skins.min.css ", rel: "stylesheet", type: "text/css"}
-    %link{href: "ace/assets/css/ace-ie.min.css", rel: "stylesheet", type: "text/css"}
-    %link{href: "ace/assets/css/ace-fonts.css", rel: "stylesheet", type: "text/css"}
-    %link{href: "css/application.css", rel: "stylesheet", type: "text/css"}
-    %script{src: "//code.jquery.com/jquery-2.1.1.min.js"}
-    %script{src: "ace/assets/js/bootstrap.min.js"}
-    %script{src: "ace/assets/js/ace.min.js"}
-    %script{src: "ace/assets/js/ace-elements.min.js"}
-    %script{src: "ace/assets/js/ace-extra.min.js"}
+%h3.text-center Найти заначку
 
-  %body
-    .container
-      .page-container
-        .page-content
-          %h3 CREATE OR UPDATE
-          .badge
-            ="POST /stash"
-
-          .row.form-group.top20
-            .col-sm-2
-              %label.control-label.no-padding-right{:for => "create_tags"} tags:
-            .col-md-6
-              %input{:type => "text", :name => "create_tags", :class => "text"}
-          .row.form-group
-            .col-md-2
-              %label.control-label.no-padding-right{:for => "create_text"} content:
-            .col-md-6
-              %textarea{:name => "create_text", :class => "textarea"}
-          .row.form-group
-            .col-md-offset-2.col-md-2
-              %button.btn.btn-success#create-stash Create
-          %hr
-          %h3 GET
-          .badge
-            ="GET /stash"
-          .row.form-group.top20
-            .col-sm-2
-              %label.control-label.no-padding-right{:for => "get_tags"} tags:
-            .col-md-6
-              %input{:type => "text", :name => "get_tags", :class => "text"}
-          .row.form-group
-            .col-md-offset-2.col-md-2
-              %button.btn.btn-success#get-stash Get
-          %hr
-          %h3 DELETE
-          .badge
-            ="DELETE /stash"
-          .row.form-group.top20
-            .col-sm-2
-              %label.control-label.no-padding-right{:for => "get_tags"} tags:
-            .col-md-6
-              %input{:type => "text", :name => "delete_tags", :class => "text"}
-          .row.form-group
-            .col-md-offset-2.col-md-2
-              %button.btn.btn-danger#delete-stash Delete
-
-
-:coffee
-  $(document).ready ->
-
-    $('#create-stash').click ->
-      tags = $('input[name="create_tags"]').val()
-      content = $('textarea[name="create_text"]').val()
-      $.ajax '/stash',
-        type: 'json',
-        method: 'post',
-        data: {tags: tags, content: content},
-        success: (data) ->
-          alert(data)
-    $('#get-stash').click ->
-      tags = $('input[name="get_tags"]').val()
-      $.ajax '/stash',
-        type: 'json',
-        method: 'get',
-        data: {tags: tags},
-        success: (data) ->
-          alert(data)
-    $('#delete-stash').click ->
-      tags = $('input[name="delete_tags"]').val()
-      $.ajax '/stash',
-        type: 'json',
-        method: 'delete',
-        data: {tags: tags},
-        success: (data) ->
-          alert(data)
+.row.form-group.top20
+  .col-md-6.col-md-offset-3
+    .input-group
+      %input{:type => "text", :name => "get_tags", :class => "form-control text"}
+      %span.input-group-btn
+        %button.btn.btn-sm.btn-success#get-stash Искать
+.row.form-group.top20
+  .col-md-6.col-md-offset-3
+    %p.response
