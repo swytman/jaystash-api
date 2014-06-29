@@ -5,7 +5,6 @@ gem 'sinatra'
 gem 'json'
 gem 'haml'
 
-gem 'sinatra'
 gem 'sinatra-assetpack'
 gem 'rake'
 gem 'activerecord'
