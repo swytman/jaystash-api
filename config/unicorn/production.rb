@@ -2,8 +2,8 @@ deploy_to = "/var/www/jaystash-api"
 app_root = "#{deploy_to}/current"
 pid_file = "#{deploy_to}/shared/pids/unicorn.pid"
 socket_file= "#{deploy_to}/shared/unicorn.sock"
-log_file = "#{app_root}/log/unicorn.log"
-err_log = "#{app_root}/log/unicorn_error.log"
+log_file = "#{deploy_to}/shared/log/unicorn.log"
+err_log = "#{deploy_to}/shared/log/unicorn_error.log"
 old_pid = pid_file + '.oldbin'
 
 timeout 30

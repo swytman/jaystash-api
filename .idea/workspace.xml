@@ -40,19 +40,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="18" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1278">
+            <state line="10" column="18" selection-start="308" selection-end="308" vertical-scroll-proportion="0.17142858" vertical-offset="72" max-vertical-offset="1278">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="database.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="25" selection-start="56" selection-end="56" vertical-scroll-proportion="0.05598756" vertical-offset="0" max-vertical-offset="643">
+            <state line="2" column="25" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
               <folding />
             </state>
           </provider>
@@ -70,7 +70,7 @@
       <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="49" selection-start="94" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="882">
+            <state line="5" column="31" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
               <folding />
             </state>
           </provider>
@@ -140,11 +140,11 @@
         <option value="$PROJECT_DIR$/views/index.haml" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/config/deploy/production.rb" />
-        <option value="$PROJECT_DIR$/config/unicorn/production.rb" />
         <option value="$PROJECT_DIR$/Capfile" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/config/unicorn/production.rb" />
       </list>
     </option>
   </component>
@@ -673,23 +673,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="25" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="49" selection-start="94" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="882">
+        <state line="5" column="31" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="25" selection-start="56" selection-end="56" vertical-scroll-proportion="0.05598756" vertical-offset="0" max-vertical-offset="643">
+        <state line="10" column="18" selection-start="308" selection-end="308" vertical-scroll-proportion="0.17142858" vertical-offset="72" max-vertical-offset="1278">
           <folding />
         </state>
       </provider>
