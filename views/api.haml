@@ -33,9 +33,45 @@
   ="DELETE /stash"
 .row.form-group.top20
   .col-sm-2
-    %label.control-label.no-padding-right{:for => "get_tags"} tags:
+    %label.control-label.no-padding-right{:for => "delete_tags"} tags:
   .col-md-6
     %input{:type => "text", :name => "delete_tags", :class => "text"}
 .row.form-group
   .col-md-offset-2.col-md-2
     %button.btn.btn-danger#delete-stash Delete
+
+%hr
+%h3 SIGN UP
+.badge
+  ="POST /sign_up"
+.row.form-group.top20
+  .col-sm-2
+    %label.control-label.no-padding-right{:for => "signup_email"} Email:
+  .col-md-6
+    %input{:type => "text", :name => "signup_email", :class => "text"}
+.row.form-group
+  .col-md-2
+    %label.control-label.no-padding-right{:for => "signup_password"} Password:
+  .col-md-6
+    %input{:type => "password",:name => "signup_password", :class => "textarea"}
+.row.form-group
+  .col-md-offset-2.col-md-2
+    %button.btn.btn-success#signup Sign up!
+
+%hr
+%h3 GET TOKEN
+.badge
+  ="GET /sign_in"
+.row.form-group.top20
+  .col-sm-2
+    %label.control-label.no-padding-right{:for => "signin_email"} Email:
+  .col-md-6
+    %input{:type => "text", :name => "signin_email", :class => "text"}
+.row.form-group
+  .col-md-2
+    %label.control-label.no-padding-right{:for => "signin_password"} Password:
+  .col-md-6
+    %input{:type => "password",:name => "signin_password", :class => "textarea"}
+.row.form-group
+  .col-md-offset-2.col-md-2
+    %button.btn.btn-success#signin Get token!

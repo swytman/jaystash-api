@@ -28,3 +28,21 @@ $(document).ready ->
       data: {tags: tags},
       success: (data) ->
         alert(data)
+  $('#signup').click ->
+    email = $('input[name="signup_email"]').val()
+    password = $('input[name="signup_password"]').val()
+    $.ajax '/sign_up',
+      type: 'json',
+      method: 'post',
+      data: {email: email, password: password},
+      success: (data) ->
+        alert(data)
+  $('#signin').click ->
+    email = $('input[name="signin_email"]').val()
+    password = $('input[name="signin_password"]').val()
+    $.ajax '/sign_in',
+      type: 'json',
+      method: 'get',
+      data: {email: email, password: password},
+      success: (data) ->
+        alert(data)

@@ -8,6 +8,29 @@ class User < ActiveRecord::Base
             uniqueness: { case_sensitive: false }
   validates :password_hash, presence: true
 
+  def self.create_and_check email, password
+    email = email.downcase
+    return :email_exists if User.find_by(email: email).present?
+    return :bad_email unless VALID_EMAIL_REGEX.match(email)
+    user = User.new(email: email)
+    user.gen_password password
+    user.gen_token
+    if user.save
+      return user
+    else
+      return :error
+    end
+  end
+
+  def self.login email, password
+    email = email.downcase
+    user = User.find_by(email: email)
+    return :not_found unless user
+    return :not_found unless user.check_password password
+    user
+  end
+
+
   def gen_password password
     self.salt = Digest::SHA2.hexdigest(Time.now.to_s)
     self.password_hash = Digest::SHA2.hexdigest(self.salt + password)

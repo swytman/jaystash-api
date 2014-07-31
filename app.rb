@@ -5,9 +5,28 @@ require 'coffee-script'
 require 'sinatra/assetpack'
 
 class App < Sinatra::Base
-  #before do
-  #  content_type :json
-  #end
+
+  post '/sign_up' do
+    return(head :bad_request) unless params[:email] && params[:password]
+    user = User.create_and_check params[:email], params[:password]
+    if user.is_a? User
+      return {result: :success, token: user.token}.to_json
+    else
+      return {result: :error, message: user}.to_json
+    end
+  end
+
+  get '/sign_in' do
+    return(head :bad_request) unless params[:email] && params[:password]
+    user = User.login params[:email], params[:password]
+    if user.is_a? User
+      return {result: :success, token: user.token}.to_json
+    else
+      return {result: :error, message: user}.to_json
+    end
+  end
+
+
 
   get '/' do
     haml :index

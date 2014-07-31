@@ -1,4 +1,3 @@
-
 require 'bundler'
 Bundler.require(:default)
 #require 'sass/plugin/rack'
